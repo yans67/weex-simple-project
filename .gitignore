@@ -18,3 +18,4 @@ config.js
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+vue-simple-demo/.idea/workspace.xml

@@ -1,23 +1,16 @@
 <template>
   <div class="wrapper">
-    <text @click="jumpIndex">index</text>
-    <text @click="jumpHome">home</text>
+    <text @click="jump('/index')">index</text>
+    <text @click="jump('/home')">home</text>
+    <h1>hello index!</h1>
   </div>
 </template>
 
-<style>
-
+<style scope>
+  .wrapper {
+    align-self: center;
+  }
 </style>
 
 <script>
-  export default {
-      methods: {
-          jumpIndex () {
-              this.$router.push('index')
-          },
-          jumpHome () {
-              this.$router.push('home')
-          }
-      }
-  }
 </script>
