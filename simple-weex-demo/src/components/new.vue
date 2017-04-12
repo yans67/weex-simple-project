@@ -2,18 +2,23 @@
 <!--template内部组件必须是weex官方提供的组件-->
 <template>
     <div class="wrapper">
-        <text @click="jump('/index')">index</text>
-        <text @click="jump('/home')">home</text>
-        <h1>hello home!</h1>
+        <text class="new-button" @click="">新建</text>
     </div>
 </template>
 
-<style>
-    .wrapper {
-        align-self: center;
-    }
+<style scoped>
+
 </style>
 
 <script>
+
+    export default {
+        data: {
+
+        },
+        methods: {
+
+        }
+    }
 
 </script>

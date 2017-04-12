@@ -1,13 +1,13 @@
 /**
  * Created by huangyg on 2017/4/9.
  */
-import Vue from 'vue'
+// import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Home from './components/Home.vue'
-import Index from './components/Index.vue'
+import Home from './views/home.vue'
+import Index from './views/index.vue'
 
 // Story view factory
 // function createStoriesView (type) {

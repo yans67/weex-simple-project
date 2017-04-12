@@ -23,7 +23,11 @@ function getBaseConfig () {
                 }, {
                     test: /\.vue(\?[^?]+)?$/,
                     loaders: []
+                }, {
+                    test: /\.css$/,
+                    use:['style-loader','css-loader','postcss-loader']
                 }
+
             ]
         },
         plugins: [
