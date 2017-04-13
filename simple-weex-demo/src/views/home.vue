@@ -3,35 +3,73 @@
 <template>
     <div class="wrapper">
 
-        <div class="tabbar">
-            <text @click="jump('/index')">index</text>
-            <text @click="jump('/home')">home</text>
-        </div>
-        <div class="content">
-        </div>
+        <app-header></app-header>
+
+
+        <!--列表-->
+        <list class="table" @loadmore="loadmore" loadmoreoffset="0">
+
+            <header class="header">
+                <text class="header-text">我是标题</text>
+            </header>
+
+
+            <cell class="cell" v-for="num in rows">
+                <div class="panel" >
+                    <text class="item-title">row {{num}}</text>
+                </div>
+            </cell>
+
+            <loading>
+                <text>正在加载...</text>
+            </loading>
+
+        </list>
 
     </div>
 </template>
 
 <script>
 
+    import AppHeader from '../components/app-header.vue'
+    export default {
+        components: {
+            AppHeader
+        },
+        data (){
+            return {
+                rows:[1,2,3,4,5,6,7,8,9,10,11]
+            }
+        },
+        methods :{
+
+        }
+    }
 </script>
 
 <style scoped>
-    /*@import "../style/home.css";*/
     .wrapper {
-        top: 100px;
-        justify-content: space-around;
-        flex-direction: row;
+        /*top:120px;*/
     }
-    .tabbar {
-        width: 300px;
-
-        align-self: center;
+    .table {
+        height: 800px;
+        /*top: 120px;*/
+        background-color: red ;
     }
-    .content {
-        top :300px;
-        align-self: center;
+    .header {
+        background-color: #0088fb;
+        height: 50px;
+    }
+    .header-text {
+        /*margin：0 auto;*/
+    }
+    .cell {
+        justify-content: center;
+        border-style:none none solid none;
+        border-bottom-width: 1px;
+        border-bottom-color: #c0c0c0;
+        height: 84px;
+        padding: 20px;
     }
 </style>
 

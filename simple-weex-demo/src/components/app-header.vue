@@ -1,25 +1,30 @@
 <template>
-    <div class="wrapper">
-        <text class="navBtn" @click="jump('/home')">新建</text>
+    <div class="nav">
+        <text class="leftBtn" @click="jump('/index')">首页</text>
+        <text class="rightBtn" @click="jump('/edit')">新建</text>
     </div>
 </template>
 
 <style scoped>
-    .wrapper {
-        flex-direction: row;
+    .nav {
+        display: flex;
         position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         height: 120px;
-        margin-bottom: 3px;
+        width: auto;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-bottom-color: #DDDDDD;
         background-color: #444E69;
     }
-    .navBtn {
-        position: absolute;
-        
+    .leftBtn {
+        left: 20px;
+        background-color: green;
+    }
+    .rightBtn {
         right: 20px;
-        width: 100px;
-        background-color: red;
+        background-color: green;
     }
 </style>

@@ -8,6 +8,7 @@ Vue.use(Router)
 
 import Home from './views/home.vue'
 import Index from './views/index.vue'
+import Edit from './views/edit.vue'
 
 // Story view factory
 // function createStoriesView (type) {
@@ -44,6 +45,11 @@ export default new Router({
             path: '/home',
             name: 'Home',
             component: Home
+        },
+        {
+            path: '/edit',
+            name: 'Edit',
+            component: Edit
         }
     ]
 })
