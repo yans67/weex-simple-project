@@ -40,9 +40,9 @@
     .wrapper {
         top:120px;
     }
-    .content {
-        background-color: antiquewhite;
-        height: 1080px;
+    .container {
+        /*background-color: antiquewhite;*/
+        /*height: 1080px;*/
     }
     .textarea {
         background-color: silver;
