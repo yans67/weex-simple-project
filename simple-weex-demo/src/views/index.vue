@@ -1,12 +1,13 @@
 <template>
-  <div class="wrapper">
+    <div class="wrapper">
 
-      <app-header></app-header>
+        <!--<app-header></app-header>-->
 
-      <div class="content">
-        <text class="text">暂无数据</text>
-      </div>
-  </div>
+
+        <div class="content">
+            <text class="text">暂无数据</text>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -28,14 +29,17 @@
 </script>
 
 <style scoped>
-  .wrapper {
-    top: 120px;
-    background-color: silver;
-  }
-  .content {
-    background-color: #afddff;
-    display: flex;
-    flex-direction: column;
-    height: 1000px;
-  }
+    .wrapper {
+        top: 120px;
+        background-color: silver;
+    }
+    .content {
+        background-color: #afddff;
+        display: flex;
+        flex-direction: column;
+        height: 1200px;
+        justify-content: center;
+        align-items: center;
+
+    }
 </style>
