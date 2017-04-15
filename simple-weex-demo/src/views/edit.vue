@@ -38,14 +38,14 @@
 
 <style>
     .wrapper {
-        top:120px;
+        /*top:120px;*/
     }
     .container {
         /*background-color: antiquewhite;*/
         /*height: 1080px;*/
     }
-    .textarea {
-        background-color: silver;
-        height: 500px;
-    }
+    /*.textarea {*/
+        /*background-color: silver;*/
+        /*height: 500px;*/
+    /*}*/
 </style>

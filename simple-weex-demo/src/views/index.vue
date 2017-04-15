@@ -2,15 +2,23 @@
     <div class="wrapper">
         <div class="container" v-bind:style="{ height:containerH + 'px' }">
 
-            <input ref="input" class="input" type="text">
+            <!-- 输入框 -->
+            <textarea v-if="isTextareaShow" v-bind:style="{ width:textareaW + 'px'}" class="textarea" type="text" autofocus="true" rows="10"></textarea>
 
+            <!-- 保存按钮 -->
+            <div class="y-button--save" @click="save" v-if="isButtonShow">
+                <text>保存</text>
+            </div>
+
+            <!-- 内容显示列表 -->
             <list class="list" v-bind:style="{ height: listH + 'px' , width: listW + 'px' }" v-if="isListShow">
                 <cell class="cell" v-for="item in lists">
                     <text>{{ item }}</text>
                 </cell>
             </list>
 
-            <div class="y-button" @click="btnClick" v-if="isButtonShow">
+            <!-- 新建按钮 -->
+            <div class="y-button" @click="checkList" v-if="isNewButtonShow">
                 <text>New</text>
             </div>
 
@@ -26,20 +34,27 @@
         },
         data () {
             return {
-                containerH: WXEnvironment.deviceHeight,
-                lists: [],
-                listH: 4 * 85,
-                listW: WXEnvironment.deviceWidth,
-                inputW: WXEnvironment.deviceWidth,
-                isButtonShow: true,
+                containerH: WXEnvironment.deviceHeight, //  设置容器的高度为设备高度，宽度默认为设备宽度
+                lists: [],          //  设置 lists 数组
+                listH: 4 * 85,      //  lists 高度
+                listW: WXEnvironment.deviceWidth,   //  宽度
+                textareaW: WXEnvironment.deviceWidth,   //
+                isNewButtonShow: true,
                 isListShow: false,
-                isInputShow: false
+                isInputShow: false,
+                isTextareaShow: false,
             }
         },
         methods: {
-            btnClick (){
-                this.isShow = false ;
-                this.lists.push(this.lists.length ++ ) ;
+            checkList (){
+//                this.isListShow = true ;
+                this.isTextareaShow = true ;
+//                this.lists.push(this.lists.length ++ ) ;
+            },
+            save (){
+                modal.toast({
+                    message : '保存成功',
+                })
             }
         },
         watch: {
@@ -53,53 +68,56 @@
 </script>
 
 <style scoped>
+    /* -- 输入 -- */
     .wrapper {
         /*方便调试*/
         /*top: 120px;*/
         /*background-color: silver;*/
     }
     .container {
-        /*background-color: #afddff;*/
+        background-color: #afddff;
         display: flex;
         flex-direction: column;
-        /*justify-content: center;*/
+        justify-content: center;
         align-items: center;
     }
+
     /* -- 输入 -- */
-    .input {
+    .textarea {
+        top: 10px;
+        left: 0px;
         font-size: 50px;
-        margin-top: 50px;
-        margin-left: 50px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        color: #666666;
         border-width: 2px;
         border-style: solid;
         border-color: #41B883;
+    }
+    /* -- 保存按钮 -- */
+    .y-button--save {
+        width: 100px;
+        height: 100px;
+
     }
 
     /* -- 列表 -- */
     .list {
         /*background-color: silver;*/
-        position: relative;
         top: 120px;;
+        position: relative;
     }
 
     /* -- 行 -- */
     .cell {
+        border-bottom-color: #c0c0c0;
         justify-content: center;
         border-style:none none solid none;
         border-bottom-width: 1px;
-        border-bottom-color: #c0c0c0;
         height: 84px;
         /*padding: 20px;*/
     }
 
     /* -- 按钮 -- */
     .y-button {
-        top: 400px;
+        /*top: 400px;*/
         justify-content: center;
         align-items: center;
         display: flex;
